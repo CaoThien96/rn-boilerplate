@@ -7,5 +7,8 @@ currentName='Boilerplate'
 sed -i -e "s/$currentName/$nextName/g" android/app/src/main/res/values/strings.xml
 rm -f android/app/src/main/res/values/strings.xml-e
 # Update key store
-
 cp -rf config/android_config_test/key.jks android/app
+# Update time update
+nextName=$(date '+%Y-%m-%d %H:%M')
+currentName='1.0'
+sed -i -e "s/$currentName/$nextName/g" src/Config/index.js

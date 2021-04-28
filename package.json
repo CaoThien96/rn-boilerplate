@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "postinstall": "husky install",
     "build-android-test": "chmod +x ./script/android_build_test.sh && ./script/android_build_test.sh",
-    "build-release": "cd android && ./gradlew assembleRelease"
+    "build-release": "cd android && ./gradlew assembleRelease",
+    "code-push": "bash ./script/android_build_test.sh && appcenter codepush release-react -a caothien029-gmail.com/Dev -d Production -t 1.0"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.14.1",
@@ -29,6 +30,7 @@
     "react": "17.0.1",
     "react-i18next": "^11.8.10",
     "react-native": "0.64.0",
+    "react-native-code-push": "^7.0.1",
     "react-native-flipper": "^0.75.1",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.0.0",

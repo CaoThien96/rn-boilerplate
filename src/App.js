@@ -7,6 +7,11 @@ import { ApplicationNavigator } from '~/Navigators'
 import './Translations'
 import { View, Text } from 'react-native'
 import Test from '~/Navigators/Application'
+import codePush from 'react-native-code-push'
+let codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+  installMode: codePush.InstallMode.IMMEDIATE,
+}
 const App = () => (
   <Provider store={store}>
     {/**
@@ -22,4 +27,4 @@ const App = () => (
   </Provider>
 )
 
-export default App
+export default codePush(codePushOptions)(App)

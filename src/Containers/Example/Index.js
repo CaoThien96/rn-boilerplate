@@ -12,7 +12,7 @@ import { useTheme } from '~/Theme'
 import FetchOne from '~/Store/User/FetchOne'
 import { useTranslation } from 'react-i18next'
 import ChangeTheme from '~/Store/Theme/ChangeTheme'
-
+import * as Config from '~/Config/index'
 const IndexExampleContainer = () => {
   const { t } = useTranslation()
   const { Common, Fonts, Gutters, Layout } = useTheme()
@@ -74,7 +74,7 @@ const IndexExampleContainer = () => {
         style={[Common.button.rounded, Gutters.regularBMargin]}
         onPress={() => changeTheme({ darkMode: null })}
       >
-        <Text style={Fonts.textRegular}>Auto</Text>
+        <Text style={Fonts.textRegular}>Auto{`${Config.Config.VERSION}`}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[Common.button.outlineRounded, Gutters.regularBMargin]}
