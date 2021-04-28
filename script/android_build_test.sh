@@ -6,3 +6,6 @@ nextName='Dev'
 currentName='Boilerplate'
 sed -i -e "s/$currentName/$nextName/g" android/app/src/main/res/values/strings.xml
 rm -f android/app/src/main/res/values/strings.xml-e
+# Update key store
+
+cp -rf config/android_config_test/key.jks android/app

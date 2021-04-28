@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "postinstall": "husky install",
-    "build-android-test": "chmod +x ./script/android_build_test.sh && ./script/android_build_test.sh"
+    "build-android-test": "chmod +x ./script/android_build_test.sh && ./script/android_build_test.sh",
+    "build-release": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.14.1",
