@@ -10,9 +10,10 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "postinstall": "husky install",
-    "build-android-test": "chmod +x ./script/android_build_test.sh && ./script/android_build_test.sh",
-    "build-release": "cd android && ./gradlew assembleRelease",
-    "code-push": "bash ./script/android_build_test.sh && appcenter codepush release-react -a caothien029-gmail.com/Dev -d Production -t 1.0"
+    "update-config-build-demo": "chmod +x ./script/android_build_test.sh && bash ./script/android_build_test.sh",
+    "update-config-build-fdao-demo": "chmod +x ./script/android_build_fdao_beta.sh && bash ./script/android_build_fdao_beta.sh",
+    "build-release-demo": "cd android && ./gradlew assembleRelease && appcenter distribute release --app caothien029-gmail.com/Dev --file ./android/app/build/outputs/apk/release/app-release.apk --group Collaborators",
+    "code-push-demo": "./script/android_build_test.sh && appcenter codepush release-react -a caothien029-gmail.com/Dev -d Production -t 2105032211"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.14.1",
